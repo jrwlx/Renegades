@@ -1,41 +1,33 @@
-//*************************************************************
-// Author: D.S. Malik
+//******************************************************
+// Author: D. S. Malik
 //
-// Given the first two numbers of a Fibonacci sequence, this
-// program uses a recursive function to determine a specific
-// number(s) of a Fibonacci sequence.
-//*************************************************************
+// Program: Decimal to binary
+// This program uses recursion to find the binary
+// representation of a nonnegative integer.
+//******************************************************
 #include <iostream>
 using namespace std;
 
-int rFibNum(int a, int b, int n);
+void decToBin(int num, int base);
 
 int main() {
-    int firstFibNum;
-    int secondFibNum;
-    int nth;
-
-    cout << "Enter the first Fibonacci number: ";
-    cin >> firstFibNum;
+    int decimalNum;
+    int base;
+    base = 2;
+    cout << "Enter number in decimal: ";
+    cin >> decimalNum;
     cout << endl;
-    cout << "Enter the second Fibonacci number: ";
-    cin >> secondFibNum;
-    cout << endl;
-    cout << "Enter the position of the desired Fibonacci number: ";
-    cin >> nth;
-    cout << endl;
-    cout << "The Fibonacci number at position " << nth
-    << " is: " << rFibNum(firstFibNum, secondFibNum, nth)
-    << endl;
+    cout << "Decimal " << decimalNum << " = ";
+    decToBin(decimalNum, base);
+    cout << " binary" << endl;
     return 0;
 }
 
-int rFibNum(int a, int b, int n) {
-    if (n == 1)
-        return a;
-    else if (n == 2)
-        return b;
-    else
-        return rFibNum(a, b, n - 1) + rFibNum(a, b, n - 2);
+void decToBin(int num, int base) {
+    if (num > 0)
+    {
+        decToBin(num / base, base);
+        cout << num % base;
+    }
 }
 
