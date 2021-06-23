@@ -1,3 +1,2 @@
 # Ohlone
-programming with data structures(cs124) related code taken at Ohlone Fall 2020.
-
+Assignemnts for CS-124 Programming with data structures & algorithms at Ohlone College Fall 2020. 
